@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://csv-json-converter.github.io/sitemap.xml

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSV to JSON & JSON to CSV Converter - Free & Online</title>
+  <meta name="description" content="Convert CSV to JSON and JSON to CSV online for free. Clean data converter that processes files locally in your browser. 100% secure and private.">
+  <meta name="keywords" content="csv to json, json to csv, csv converter, json converter, convert csv to json, convert json to csv">
+  
+  <!-- JSON-LD Structured Data for WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CSV to JSON & JSON to CSV Converter",
+    "description": "Convert CSV files to JSON and JSON files to CSV in your web browser. Fully client-side and secure.",
+    "url": "https://csv-json-converter.github.io/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    
+    <!-- Top Sponsor Bar -->
+    <header class="sponsor-bar">
+      
+      <!-- Card 1 -->
+      <a href="mailto:chiragbisht2003@gmail.com?subject=Advertising%20Inquiry" class="sponsor-card ad-slot-card">
+        <div class="ad-slot-content">
+          <span class="ad-title">YOUR AD HERE</span>
+          <span class="ad-stat">~40k visitors monthly</span>
+          <span class="ad-price">$9/month</span>
+        </div>
+      </a>
+      
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="workspace-container">
+      <div class="tool-box" id="toolBox">
+        
+        <!-- STATE 1: Drop Zone -->
+        <div id="stateUpload" class="tool-state active">
+          <h1 class="tool-title">Convert CSV to JSON or JSON to CSV</h1>
+          <div class="drop-zone" id="dropZone">
+            <input type="file" id="fileInput" accept=".json,.csv" style="display: none;">
+            
+            <div class="drop-zone-content">
+              <div class="doc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="9 15 12 12 15 15"></polyline></svg>
+              </div>
+              <h3>Drop your CSV or JSON file here</h3>
+              <p>or</p>
+              <button class="btn-browse">Browse file</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- STATE 2: Loading -->
+        <div id="stateLoading" class="tool-state">
+          <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h3 id="loadingText">Processing dataset...</h3>
+          </div>
+        </div>
+        
+        <!-- STATE 3: Active Grid & Actions -->
+        <div id="stateGrid" class="tool-state">
+          <div class="grid-wrapper">
+            
+            <!-- Tool Header Info & Convert Controls -->
+            <div class="grid-controls">
+              <div class="file-details">
+                <span id="loadedFileName" class="filename truncate">data.json</span>
+                <span id="loadedFileMeta" class="filemeta">JSON File &bull; 0 rows</span>
+              </div>
+              
+              <div class="action-buttons">
+                <button id="btnReset" class="btn-text">Convert new file</button>
+                <a id="btnDownload" href="#" class="btn-solid" download="converted.csv">Download CSV</a>
+              </div>
+            </div>
+            
+            <!-- The Spreadsheet Grid container -->
+            <div class="grid-container" id="gridContainer">
+              <table id="previewGrid">
+                <thead id="gridHead"></thead>
+                <tbody id="gridBody"></tbody>
+              </table>
+            </div>
+            
+            <!-- The JSON preview container -->
+            <div class="json-preview-container" id="jsonPreviewContainer" style="display: none;">
+              <pre id="jsonPreviewCode"></pre>
+            </div>
+            
+            <!-- Grid Status Footer -->
+            <div class="grid-status-bar">
+              <span id="rowsLimitText">Showing first 100 rows</span>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+    </main>
+    
+  </div>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
